@@ -1,0 +1,45 @@
+{
+  "name": "My Context Functions",
+  "description": "fixes for annoyances",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "tabs",
+    "contextMenus",
+    "downloads",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://readcomiconline.li/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.zipcomic.com/*"
+      ],
+      "all_frames": true,
+      "js": [
+        "zipcomic.com.js"
+      ]
+    },{
+      "matches": [
+        "https://readcomiconline.li/*"
+      ],
+      "all_frames": true,
+      "js": [
+        "readcomiconline.li.js"
+      ]
+    },{
+      "matches": [
+        "https://readallcomics.com/*"
+      ],
+      "all_frames": true,
+      "js": [
+        "readallcomics.com.js"
+      ]
+    }
+  ]
+}
